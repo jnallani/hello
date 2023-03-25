@@ -17,8 +17,8 @@ pipeline {
                 bat "mvn package -Dmaven.test.skip"
             }
         }
-        Stage('sonarquebe test'){
-        steps {
+        stage('sonarquebe test'){
+            steps {
                 sh 'mvn clean package sonar:sonar'
               }
         }    
