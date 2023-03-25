@@ -17,14 +17,12 @@ pipeline {
                 bat "mvn package -Dmaven.test.skip"
             }
         }
-        stage("build & SonarQube analysis") {
-            agent any
-                steps {
-              withSonarQubeEnv('My SonarQube Server') {
-                sh 'mvn clean package sonar:sonar'
-              }
-            }
-          }
-      
+        stage('SonarQube analysis') {
+            Steps {
+                withSonarQubeEnv('sonarqube-8.9.2') { 
+                 sh "mvn sonar:sonar"
+                 }
+               }
+        }     
     }
 }
