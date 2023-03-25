@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('GitHub project pull') {
             steps {
-                git branch: 'main', url: 'https://github.com/Sonishraj/jenkins.git'
+                git branch: 'main', url: 'https://github.com/jnallani/hello.git'
             }
             
         }
